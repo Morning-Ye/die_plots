@@ -1105,9 +1105,9 @@ void corrAndGetSignals()
 		H2D_MvsPt_CKTphi_aftAcc[icent]
 			= (TH2D*) calRatioH1toH2( H2D_MvsPt_CKTphi[icent],     H2d_MvsPt_PairAcc[icent],   Form("H2D_MvsPt_CKTphi_aftAcc_icent%d",     icent), "NOCORR" );
 		H2D_MvsPt_CKTcc_aftAcc[icent]
-			= (TH2D*) calRatioH1toH2( H2D_MvsPt_CKTcc[icent],      H2d_MvsPt_PairAcc[icent],   Form("H2D_MvsPt_CKTcc_aftAcc_icent%d",       icent), "NOCORR" );
+			= (TH2D*) calRatioH1toH2( H2D_MvsPt_CKTcc[icent],      H2d_MvsPt_PairAcc[icent],   Form("H2D_MvsPt_CKTcc_aftAcc_icent%d",      icent), "NOCORR" );
 		H2D_MvsPt_CKTdy_aftAcc[icent]
-			= (TH2D*) calRatioH1toH2( H2D_MvsPt_CKTdy[icent],      H2d_MvsPt_PairAcc[icent],   Form("H2D_MvsPt_CKTdy_aftAcc_icent%d",     icent), "NOCORR" );
+			= (TH2D*) calRatioH1toH2( H2D_MvsPt_CKTdy[icent],      H2d_MvsPt_PairAcc[icent],   Form("H2D_MvsPt_CKTdy_aftAcc_icent%d",      icent), "NOCORR" );
 		//---------------------------------------------------------------------------
 		//Apply PairEff on the CKTSum_wAccEff, which then could be compared to the CKTSum within STAR Acc ?
 		//check whether pairEff could correct the CKT sum to be what they should be
@@ -1143,26 +1143,26 @@ void corrAndGetSignals()
 		H1d_M_CKTSum_Expect[icent] ->SetName(Form("H1d_M_CKTSum_Expect_icent%d",         icent));
 
 		H1d_M_CKTnoVect_aftAllCorr[icent] 
-			= (TH1D*)H2D_MvsPt_CKTnoVect_aftAcc[icent]->ProjectionY(Form("H1d_M_CKTnoVect_aftAllCorr_icent%d", icent), LowPtBin, HigPtBin);
+			= (TH1D*)H2D_MvsPt_CKTnoVect_aftAcc[icent] ->ProjectionY(Form("H1d_M_CKTnoVect_aftAllCorr_icent%d", icent), LowPtBin, HigPtBin);
 		H1d_M_CKTnoVect_aftAllCorr[icent] ->SetName(Form("H1d_M_CKTnoVect_aftAllCorr_icent%d", icent));
 		H1d_M_CKTw_aftAllCorr[icent] 
-			= (TH1D*)H2D_MvsPt_CKTw_aftAcc[icent]    ->ProjectionY(Form("H1d_M_CKTw_aftAllCorr_icent%d",       icent), LowPtBin, HigPtBin);
-		H1d_M_CKTw_aftAllCorr[icent]      ->SetName(Form("H1d_M_CKTw_aftAllCorr_icent%d", icent));
+			= (TH1D*)H2D_MvsPt_CKTw_aftAcc[icent]      ->ProjectionY(Form("H1d_M_CKTw_aftAllCorr_icent%d",      icent), LowPtBin, HigPtBin);
+		H1d_M_CKTw_aftAllCorr[icent]      ->SetName(Form("H1d_M_CKTw_aftAllCorr_icent%d",      icent));
 		H1d_M_CKTphi_aftAllCorr[icent] 
-			= (TH1D*)H2D_MvsPt_CKTphi_aftAcc[icent]  ->ProjectionY(Form("H1d_M_CKTphi_aftAllCorr_icent%d",     icent), LowPtBin, HigPtBin);
-		H1d_M_CKTphi_aftAllCorr[icent]    ->SetName(Form("H1d_M_CKTphi_aftAllCorr_icent%d", icent));
+			= (TH1D*)H2D_MvsPt_CKTphi_aftAcc[icent]    ->ProjectionY(Form("H1d_M_CKTphi_aftAllCorr_icent%d",    icent), LowPtBin, HigPtBin);
+		H1d_M_CKTphi_aftAllCorr[icent]    ->SetName(Form("H1d_M_CKTphi_aftAllCorr_icent%d",    icent));
 		H1d_M_CKTcc_aftAllCorr[icent] 
-			= (TH1D*)H2D_MvsPt_CKTcc_aftAcc[icent]    ->ProjectionY(Form("H1d_M_CKTcc_aftAllCorr_icent%d",     icent), LowPtBin, HigPtBin);
-		H1d_M_CKTcc_aftAllCorr[icent]      ->SetName(Form("H1d_M_CKTcc_aftAllCorr_icent%d", icent));
+			= (TH1D*)H2D_MvsPt_CKTcc_aftAcc[icent]     ->ProjectionY(Form("H1d_M_CKTcc_aftAllCorr_icent%d",     icent), LowPtBin, HigPtBin);
+		H1d_M_CKTcc_aftAllCorr[icent]     ->SetName(Form("H1d_M_CKTcc_aftAllCorr_icent%d",     icent));
 		H1d_M_CKTdy_aftAllCorr[icent] 
-			= (TH1D*)H2D_MvsPt_CKTdy_aftAcc[icent]  ->ProjectionY(Form("H1d_M_CKTdy_aftAllCorr_icent%d",     icent), LowPtBin, HigPtBin);
-		H1d_M_CKTdy_aftAllCorr[icent]    ->SetName(Form("H1d_M_CKTdy_aftAllCorr_icent%d", icent));
+			= (TH1D*)H2D_MvsPt_CKTdy_aftAcc[icent]     ->ProjectionY(Form("H1d_M_CKTdy_aftAllCorr_icent%d",     icent), LowPtBin, HigPtBin);
+		H1d_M_CKTdy_aftAllCorr[icent]     ->SetName(Form("H1d_M_CKTdy_aftAllCorr_icent%d",     icent));
 		
 
 		//project 1D US, LSPos, LSNeg for given Pt bin
 		for(int ipt=0; ipt<nPtBins4Vm; ipt++)
 		{
-			double iptBinLow = H2d_MvsPt_US_aftEffAcc[icent]->GetXaxis()->FindBin(ptBds4Vm[ipt]);
+			double iptBinLow = H2d_MvsPt_US_aftEffAcc[icent]->GetXaxis()->FindBin(ptBds4Vm[ipt]  );
 			double iptBinHig = H2d_MvsPt_US_aftEffAcc[icent]->GetXaxis()->FindBin(ptBds4Vm[ipt+1]);
 
 			H1d_MinPt_US_aftAllCorr[icent][ipt]    = (TH1D*) H2d_MvsPt_US_aftEffAcc[icent]    ->ProjectionY(Form("H1d_MinPt_US_aftAllCorr_icent%d_ipt%d",    icent, ipt), iptBinLow, iptBinHig);
